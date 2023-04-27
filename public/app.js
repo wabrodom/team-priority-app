@@ -1,4 +1,4 @@
-const API_URL = "https://team-priority-app-v5.onrender.com/";
+const API_URL = "https://team-priority-app-v5.onrender.com/api/todos";
 const logoutButton = document.getElementById("logoutButton");
 if (logoutButton) {
   logoutButton.addEventListener("click", logout);
