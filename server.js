@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
+const cors = requre("cors");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -38,10 +39,11 @@ const userSchema = new mongoose.Schema({
 const Todo = mongoose.model("Todo", todoSchema);
 const User = mongoose.model("User", userSchema);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -63,7 +65,7 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.post("/api/login", async (req, res) => {
+app.post("/api/login", cors(), async (req, res) => {
   const { username, password } = req.body;
 
   const user = await User.findOne({ username });
@@ -100,7 +102,7 @@ function isAuthenticated(req, res, next) {
     res.status(403).json({ message: "Invalid or expired token" });
   }
 }
-app.post("/api/todos", isAuthenticated, async (req, res) => {
+app.post("/api/todos", cors(), isAuthenticated, async (req, res) => {
   const { task, priority } = req.body;
   const userId = req.user._id; // req.userId; //
   const newTodo = new Todo({ task, priority, userId });
@@ -109,20 +111,20 @@ app.post("/api/todos", isAuthenticated, async (req, res) => {
   res.status(201).json(newTodo);
 });
 
-app.get("/api/todos", isAuthenticated, async (req, res) => {
+app.get("/api/todos", cors(), isAuthenticated, async (req, res) => {
   const userId = req.user._id; // req.userId; //
   const todos = await Todo.find({ userId }); //user
   // console.log(`Todos fetched for user ${userId}:`, todos);
   res.json(todos);
 });
 
-app.put("/api/todos/:id", isAuthenticated, async (req, res) => {
+app.put("/api/todos/:id", cors(), isAuthenticated, async (req, res) => {
   const { id } = req.params;
   await Todo.findByIdAndUpdate(id, req.body);
   res.json({ message: "Todo updated successfully" });
 });
 
-app.delete("/api/todos/:id", isAuthenticated, async (req, res) => {
+app.delete("/api/todos/:id", cors(), isAuthenticated, async (req, res) => {
   const { id } = req.params;
   await Todo.findByIdAndDelete(id);
   res.json({ message: "Todo deleted successfully" });
