@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.login-form {
+  text-align: center;
+  padding: 1rem 0;
+}
+#loginForm >* {
+  adding: 1rem 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#usernameDisplay {
+  color:blueviolet;
+  font-weight: bold;
+}
+
+.one-line {
+  display: flex;
+  justify-content: space-between;
+}
+.input-part {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+}
+
+.output-part {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.leftWordColumn {
+  text-align: center;
+  width: 15%;
+  white-space: pre-wrap
+}
+
+.matrix {
+  display: block;
+  width: 70vw;
+}
+
+.matrix > div {
+  width: 100%;
+}
+
+.oneThird {
+  display: none;
+  text-align:center;
+  width: 33.33%;
+}
+
+
+
+.quadrant {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  word-wrap: break-word;
+}
+
+.delete-button {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #f00;
+}
+
+button {
+  padding: 1rem 1.5rem;
+
+}
+button#logoutButton {
+  background: skyblue;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+#quickWins {
+  order: 1;
+  color:#000000;
+}
+
+#majorProjects{
+  order: 2;
+  color:#797979
+}
+
+#fillIns {
+  order: 3;
+  color:#585858
+}
+
+#hardSlogs{
+  order: 4;
+  color:#bababa
+}
+
+
+@media screen and (min-width: 768px) {
+  .matrix {
+    display: flex;
+    flex-wrap: wrap;
+    width: 92%;
+  }
+  .matrix > div {
+    width: 50%;
+  }
+  .oneThird {
+    display: block;
+  }
+  .leftWordColumn {
+    width: 8%;
+  }
+}

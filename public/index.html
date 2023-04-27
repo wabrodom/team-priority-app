@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Priority! App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- input -->
+    <h1>Team Priority! App</h1>
+    <section class="one-line">
+      <a href="login.html"> <button type="button">Login</button></a>
+
+      <p id="usernameDisplay"></p>
+    </section>
+    <section class="input-part">
+      <!-- <input type="text" id="taskInput" placeholder="Enter a new task"/> -->
+      <textarea id="taskInput" placeholder="Enter a new task"></textarea>
+      <select id="prioritySelect" multiple size="4">
+        <option value="1">Quick Wins</option>
+        <option value="2">Major Projects</option>
+        <option value="3">Fill Ins</option>
+        <option value="4">Hard Slogs</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </section>
+    <!--  output -->
+    <section class="output-part">
+      <p class="oneThird">Low Effort</p>
+      <p class="oneThird">— — — ></p>
+      <p class="oneThird">High Effort</p>
+      <p class="leftWordColumn">
+        High<br /><br />Impact<br /><br />^<br />|<br />|<br />|<br /><br />Low<br /><br />Impact
+      </p>
+      <div class="matrix">
+        <div class="quadrant" id="quickWins">
+          <h2>งานใหญ่เบอร์ 1 : Quick Wins</h2>
+          <ul></ul>
+        </div>
+        <div class="quadrant" id="majorProjects">
+          <h2>งานใหญ่วางแผน: Projects</h2>
+          <ul></ul>
+        </div>
+        <div class="quadrant" id="fillIns">
+          <h2>งานเร่งเบอร์ 2: Fill Ins</h2>
+          <ul></ul>
+        </div>
+        <div class="quadrant" id="hardSlogs">
+          <h2>งานที่รอคิวได้: Hard Slogs</h2>
+          <ul></ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="one-line">
+        <h3>To make the most of Team Priority! App</h3>
+        <button id="logoutButton">Logout</button>
+      </div>
+      <ol>
+        <li>Double click to mark completed task.</li>
+        <li>Delete completed tasks once a day to gain insights of the team status.</li>
+      </ol>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
