@@ -1,4 +1,4 @@
-👋 Welcome to Team Priority App v5, I designed to help small teams prioritize tasks. 
+👋 Welcome to Team Priority App, I designed to help small teams prioritize tasks. 
 If you're interested, please check out this link:
 
  <a href="https://team-priority-app-v5.onrender.com/" target="_blank">https://team-priority-app-v5.onrender.com</a>  🚀
@@ -13,4 +13,4 @@ The mock users consist of five individuals.
 With the help of ChatGPT and some googling, I've created what I believe to be my best Node.js app for now. 
 I spent countless hours and days to bring this app to showable state and make it available to the public. 
 ***
-If you have any advice or feedback, please don't hesitate to share it with me. Thank you for considering Team Priority App v5
+If you have any advice or feedback, please don't hesitate to share it with me. Thank you for considering Team Priority App
